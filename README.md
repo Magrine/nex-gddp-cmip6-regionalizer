@@ -102,8 +102,30 @@ Always check this table before selecting models and variables to avoid failed do
 git clone https://github.com/Magrine/nex-gddp-cmip6-regionalizer
 cd nex-gddp-cmip6-regionalizer
 ```
-
 ---
+
+## 🌎 Defining Regions (Bounding Boxes)
+
+Before running the pipeline, users must define the geographic regions that will be cropped and masked in the final NetCDF output.
+
+Regions are specified inside `main.py` using bounding boxes (min/max latitude and longitude):
+
+```python
+regions = {
+    "alagoas": {
+        "min_lon": -39.0, "max_lon": -35.0,
+        "min_lat": -11.0, "max_lat": -8.5
+    },
+    "sao_paulo": {
+        "min_lon": -53.5, "max_lon": -44.0,
+        "min_lat": -25.5, "max_lat": -19.5
+    },
+    "matopipa": {
+        "min_lon": -50.0, "max_lon": -40.0,
+        "min_lat": -15.0, "max_lat": -2.0
+    }
+}
+```
 
 ## ▶️ Running the Pipeline
 
